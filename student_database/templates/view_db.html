@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students</title>
+</head>
+<body>
+    <div>
+        <center><h1 id="view_data">Students Data</h1></center>
+    </div>
+    <div>
+        <form method="get" action="/view_data" >
+
+            <center>
+                <input list="operation" name="operation" placeholder="Select operation">
+                   <datalist id="operation">
+                     <option value="delete"></option>
+                     <option value="view"></option>
+                   </datalist><br><br>
+
+               <input list="column" name="find" placeholder="Select column name">
+                   <datalist id="column">
+                    <option value="all"></option>
+                    <option value="roll_no"></option>
+                    <option value="name"></option>
+                    <option value="email"></option>
+                    <option value="dept"></option>
+                    <option value="studing_year"></option>
+                    <option value="doj"></option>
+                   </datalist>
+                <br><br>
+               <label>Search By Data <input type="text" name="search" placeholder="Enter roll no./name/email/dept/year" style="width: 250px;"></label><br><br>
+            </center>
+            <center>
+            <table border="2">
+                 <tr>
+                    <td>Roll number</td><td>Name</td><td>Email</td><td>Department</td><td>Studing year</td><td>DOJ</td></tr>
+                 {% for students in datas %}
+                 <tr><td>{{students[0]}}</td><td>{{students[1]}}</td><td>{{students[2]}}</td><td>{{students[3]}}</td><td>{{students[4]}}</td><td>{{students[5]}}</td>
+                 </tr>
+                 {% endfor %}
+                
+            </table>
+            </center><br>
+            <center><button type="submit">Submit</button></center>
+        </form>
+        <center><a href="{{url_for('back')}}"><button style="margin-top: 5px;">Back</button></a></center>
+    </div>
+</body>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dbe6f6, #c5796d);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            text-shadow: 1px 1px 3px #aaa;
+        }
+
+        form {
+            background: #fff;
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        input[type="text"], input[list] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[list]:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 8px #6a11cb66;
+            outline: none;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fafafa;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #6a11cb;
+            color: white;
+        }
+
+        td {
+            color: #333;
+        }
+
+        button {
+            background-color: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2575fc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        center {
+            display: block;
+            text-align: center;
+        }
+
+        datalist{
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</html>

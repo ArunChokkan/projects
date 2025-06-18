@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dbe6f6, #c5796d);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            text-shadow: 1px 1px 3px #aaa;
+        }
+
+        .btn {
+            background-color: #6a11cb;
+            color: white;
+            padding: 15px 25px;
+            margin: 20px 10px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2575fc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        center {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+<body>
+    <div id="heading">
+        <center><h1 id="heading_content">STUDENT DATABASE</h1></center>
+    </div>
+    <br>
+    <div>
+        <center>
+        <!--the below is add redirect page after clicking the button using <a>tag and the "add
+            _data is the route name in the backend code"-->
+        <a href="{{url_for('add_data')}}"><button class="btn">Add Students</button></a>
+
+        <a href="{{url_for('view_data')}}"><button class="btn">View and Update Students</button></a>
+
+        
+    <!--we can also use form method for redirect page as i used  for submit button
+    <form method="post" action="/submit">
+        and backend should have respective redirect code-->
+        </center>
+    </div>
+
+</body>
+</html>

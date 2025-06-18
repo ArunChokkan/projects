@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student details📝</title>
+</head>
+<body id="body">
+    <br>
+    <center>
+        <div id="heading">
+        <h1>Students registration form</h1><br>
+        </div>
+    </center>
+    <br>
+    <div id="form">
+    <form method="post" action="/submit">
+    <table id="table" border="3">
+      <tr><td>Name:</td><td> <input type="text" name="name" placeholder="enter name" style="width: 250px;" ></td></tr>
+
+      <tr><td>Email:</td><td> <input type="email" name="email"placeholder="enter email" style="width: 250px;"></td></tr>
+
+      <tr><td>Roll Number:</td><td> <input type="number" name="roll_no" placeholder="enter roll number" style="width: 250px;"></td></tr>
+
+      <tr><td>Department:</td><td> <input list="department list" name="dept" placeholder="enter department" style="width: 250px;">
+            <datalist id="department list">
+                <option value="CSE">Computer Science Engineering</option>
+                <option value="ECE">Electrical and Communication Engineering</option>
+                <option value="MECH">Mechanical Engineering</option>
+                <option value="EEE">Electrical and Electronic Engineering</option>
+            </datalist>
+    </td></tr>
+
+    <tr><td>Year of studing:</td><td> <input list="studing year" name="studing_year" placeholder="enter year" style="width: 250px;">
+        <datalist id="studing year">
+            <option value=1></option>
+            <option value=2></option>
+            <option value=3></option>
+            <option value=4></option>
+        </datalist>
+    </td></tr>
+
+    <tr><td>Date of Joining</td><td><input type="date" name="doj" ></td></tr>
+    </table>
+    <center>
+        <a href="{{url_for('back')}}"><button type="button" id="back">Back</button></a>
+     <button type="submit" id="submit">Submit</button>
+    </center>
+    </form>
+   
+    </div>
+</body>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #dbe6f6, #c5796d);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            text-shadow: 1px 1px 3px #aaa;
+        }
+
+        form {
+            background: #fff;
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus,input[type="date"]:focus,input[type="email"]:focus,input[type="number"]:focus, input[list]:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 8px #6a11cb66;
+            outline: none;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fafafa;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #6a11cb;
+            color: white;
+        }
+
+        td {
+            color: #333;
+        }
+
+        button {
+            background-color: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2575fc;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        center {
+            display: block;
+            text-align: center;
+        }
+    </style>
+</html>
